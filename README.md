@@ -3,7 +3,7 @@
 The [COVID-19 France dashboard](https://dashboard.covid19.data.gouv.fr/vue-d-ensemble?location=FRA) provides consolidated data and visualization tools of statistics about the COVID-19 pandemic in France.
 Additionally, all raw data files are available [for download](https://data.widgets.dashboard.covid19.data.gouv.fr/).
 
-The [Wimmics team](https://team.inria.fr/wimmics/) and [I3S laboratory](http://www.i3s.unice.fr/) (University Côte d'Azur, Inria, CNRS) provide an [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) representation of these data, comprising the daily numbers of confirmed cases, hospitalized cases, cases in intensive care.
+The [Wimmics team](https://team.inria.fr/wimmics/) and [I3S laboratory](http://www.i3s.unice.fr/) (University Côte d'Azur, Inria, CNRS) provide an [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) representation of these data, comprising the daily numbers of confirmed cases, hospitalized cases, cases in intensive care, and propagation of virus mutations.
 Granularity includes national, regional and departmental levels.
 
 ### SPARQL Querying
@@ -39,7 +39,7 @@ The RDF representation is based on the [Schema.org extention](http://blog.schema
 Each daily report is an announcement ([`schema:SpecialAnnouncement`](https://schema.org/SpecialAnnouncement)) that has:
 - a date ([`schema:datePosted`](https://schema.org/datePosted));
 - a geographic zone where the figures apply (`schema:spatialCoverage`), whose type is one of [`schema:State`](http://schema.org/State]) and Wikidata entities [region of France](http://www.wikidata.org/entity/Q36784), [department of France](http://www.wikidata.org/entity/Q6465) or [French overseas collectivity](http://www.wikidata.org/entity/Q719487);
-- a set of statistics ([`schema:diseaseSpreadStatistics`](https://schema.org/diseaseSpreadStatistics)) that are [`schema:Observation`](https://schema.org/Observation)'s reporting the numbers of cases (confirmed, hospitalized, in intensive care).
+- a set of statistics ([`schema:diseaseSpreadStatistics`](https://schema.org/diseaseSpreadStatistics)) that are [`schema:Observation`](https://schema.org/Observation)'s reporting the numbers of cases (confirmed, hospitalized, in intensive care) and the propagation of mutations.
 
 
 ### Data Transformation
