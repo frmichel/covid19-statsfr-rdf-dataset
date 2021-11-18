@@ -34,7 +34,7 @@ For a visual exploration, check the associated example [Jupiter Notebook](jupyte
 
 ### RDF Data Modeling
 
-The RDF representation is based on the [Schema.org extention](http://blog.schema.org/2020/03/schema-for-coronavirus-special.html) defined recently for the case of the COVID-19 pandemic.
+The RDF representation is based on the [Schema.org extention](http://blog.schema.org/2020/03/schema-for-coronavirus-special.html) defined for the case of the COVID-19 pandemic.
 
 Each daily report is an announcement ([`schema:SpecialAnnouncement`](https://schema.org/SpecialAnnouncement)) that has:
 - a date ([`schema:datePosted`](https://schema.org/datePosted));
@@ -52,7 +52,7 @@ We have set up an automated process to invoke this service daily and update the 
 All scripts, configuration and mapping files are provided in directory [src](src).
 
 
-# License
+## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
 
