@@ -2,7 +2,7 @@
 # Author: Franck MICHEL, University Cote d'Azur, CNRS, Inria
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
-export PROJECT=/appli/covid19.data.gouv.fr
+export PROJECT=/appli/covid19-statsfr-rdf-dataset
 
 # Directory for raw data files
 export DUMP_DIR=$PROJECT/src/mongo/dumps

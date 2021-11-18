@@ -5,29 +5,40 @@
 # Environment variables
 . ../env.sh
 
+aggregate=/tmp/aggregate_$$.js
 
 collection=confirmed
 mongoimport --type=json --drop -d $DB -c $collection $DUMP_DIR/${collection}.json
+awk "{ gsub(/{{collection}}/, \"$collection\"); print }" aggregate_tpl.js > $aggregate
+mongo localhost/$DB $aggregate
 
 collection=deaths
 mongoimport --type=json --drop -d $DB -c $collection $DUMP_DIR/${collection}.json
+awk "{ gsub(/{{collection}}/, \"$collection\"); print }" aggregate_tpl.js > $aggregate
+mongo localhost/$DB $aggregate
 
 collection=hospitalized
 mongoimport --type=json --drop -d $DB -c $collection $DUMP_DIR/${collection}.json
+awk "{ gsub(/{{collection}}/, \"$collection\"); print }" aggregate_tpl.js > $aggregate
+mongo localhost/$DB $aggregate
 
 collection=intensive_care
 mongoimport --type=json --drop -d $DB -c $collection $DUMP_DIR/${collection}.json
+awk "{ gsub(/{{collection}}/, \"$collection\"); print }" aggregate_tpl.js > $aggregate
+mongo localhost/$DB $aggregate
 
 
 collection=prop_variant_A
 mongoimport --type=json --drop -d $DB -c $collection $DUMP_DIR/${collection}.json
+awk "{ gsub(/{{collection}}/, \"$collection\"); print }" aggregate_tpl.js > $aggregate
+mongo localhost/$DB $aggregate
 
 collection=prop_variant_B
 mongoimport --type=json --drop -d $DB -c $collection $DUMP_DIR/${collection}.json
+awk "{ gsub(/{{collection}}/, \"$collection\"); print }" aggregate_tpl.js > $aggregate
+mongo localhost/$DB $aggregate
 
 collection=prop_variant_C
 mongoimport --type=json --drop -d $DB -c $collection $DUMP_DIR/${collection}.json
-
-
-# Reshape colections
-mongo localhost/$DB aggregate.js
+awk "{ gsub(/{{collection}}/, \"$collection\"); print }" aggregate_tpl.js > $aggregate
+mongo localhost/$DB $aggregate

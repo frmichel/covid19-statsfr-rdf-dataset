@@ -1,0 +1,59 @@
+# Author: Franck MICHEL, University Cote d'Azur, CNRS, Inria
+#
+# Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+
+@prefix xrr:    <http://i3s.unice.fr/xr2rml#>.
+@prefix rr:     <http://www.w3.org/ns/r2rml#>.
+@prefix rml:    <http://semweb.mmlab.be/ns/rml#>.
+
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#>.
+
+@prefix schema: <http://schema.org/>.
+@prefix wd:     <http://www.wikidata.org/entity/>.
+@prefix wdt:    <http://www.wikidata.org/prop/direct/>.
+@prefix covidpr:<http://ns.inria.fr/covid19/property/>.
+
+
+<#LS>
+    a               xrr:LogicalSource;
+    xrr:query       """db.prop_variant_B_unwind.find({})""".
+
+
+<#TM_announcement>
+    a               rr:TriplesMap;
+    xrr:logicalSource <#LS>;
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/covid19/datagouvfr/announcement/{$.observations.values.date}/{$.observations.level}/{$.observations.code_level}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:diseaseSpreadStatistics;
+        rr:objectMap [ 
+            rr:template "{$.observations.values.date}-{$.observations.level}-{$.observations.code_level}"; 
+            rr:termType rr:BlankNode 
+        ];
+    ].
+
+
+<#TM_observation>
+    a               rr:TriplesMap;
+    xrr:logicalSource <#LS>;
+    rr:subjectMap [
+        rr:template "{$.observations.values.date}-{$.observations.level}-{$.observations.code_level}"; 
+        rr:termType rr:BlankNode;
+        rr:class    schema:Observation;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:object "propagation of mutation E484Q (including variant Kappa)";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:measuredProperty;
+        rr:objectMap [ rr:termType rr:IRI; rr:constant covidpr:propagationVariantB ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:measuredValue;
+        rr:objectMap [ xrr:reference "$.observations.values.value" ];
+    ];
+    .

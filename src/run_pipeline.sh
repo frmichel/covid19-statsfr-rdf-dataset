@@ -12,13 +12,15 @@ echo "==========================================================================
 log "Download files and import into MongoDB..."
 cd $PROJECT/src/mongo
 . ./download.sh
-. ./import.sh
 
 # Check minimum output size
 if [  $(wc -c <"$DUMP_DIR/confirmed.json") -lt  "2000000" ]; then
     log "Unexpected confirmed.json size < 2MB. Stopping."
     exit 0
 fi
+
+log "Importing files into MongoDB..."
+. ./import.sh
 
 log "Generating RDF files..."
 cd $PROJECT/src/xr2rml
