@@ -1,0 +1,30 @@
+@prefix covidpr:<http://ns.inria.fr/covid19/property/>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
+@prefix wdt:    <http://www.wikidata.org/prop/direct/>.
+@prefix wd:     <http://www.wikidata.org/entity/>.
+
+wd:Q81068910 rdfs:label "Covid19 pandemic".
+
+wdt:P1603   rdfs:label "number of confirmed cases".
+wdt:P1120   rdfs:label "number of deaths in hospital".
+wdt:P8049   rdfs:label "number of hospitalized cases".
+covidpr:noCasesIntensiveCare
+    a               owl:DatatypeProperty;
+    rdfs:label      "number of patients in intensive care units".
+
+wdt:P2585   rdfs:label "INSEE region code".
+wdt:P2586   rdfs:label "INSEE department code".
+
+wd:Q36784   rdfs:label "region of France".
+wd:Q6465    rdfs:label "department of France".
+wd:Q56061   rdfs:label "administrative territorial entity".
+wd:Q161243  rdfs:label "dependent territory".
+wd:Q202216  rdfs:label "overseas department and region of France".
+wd:Q719487  rdfs:label "French overseas collectivity".
+wd:Q1048835 rdfs:label "political territorial entity".
+wd:Q3624078 rdfs:label "sovereign state".
+wd:Q161243  rdfs:label "dependent territory".
+wd:Q22670030 rdfs:label "former French region".
+

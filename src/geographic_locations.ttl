@@ -1,0 +1,821 @@
+@prefix covidpr:<http://ns.inria.fr/covid19/property/>.
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix wdt:    <http://www.wikidata.org/prop/direct/>.
+@prefix wd:     <http://www.wikidata.org/entity/>.
+
+
+# ===================================================
+# --- Country
+
+<http://ns.inria.fr/covid19/datagouvfr/location/nat/fra>
+    a                   schema:State, wd:Q3624078;
+    owl:sameAs          wd:Q142;
+    schema:name         "France".
+
+
+# ===================================================
+# --- Regions
+
+# prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+# prefix schema: <http://schema.org/>
+# prefix wdt:    <http://www.wikidata.org/prop/direct/>
+# prefix wd:     <http://www.wikidata.org/entity/>
+# 
+# construct {
+#     ?reg
+#         a ?type; 
+#         wdt:P2585 ?code;
+#         schema:name ?sLabel;
+#         owl:sameAs ?s.
+# }
+# where {
+#     service <https://query.wikidata.org/sparql> {
+#     select ?s ?sLabel ?code {
+#     ?s wdt:P31 ?type;
+#        wdt:P2585 ?code.
+#        SERVICE wikibase:label { bd:serviceParam wikibase:language "fr". }
+#     }}
+# 
+#     bind (iri(concat("http://ns.inria.fr/covid19/datagouvfr/location/reg/", ?code)) as ?reg)
+# }
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/01> a <http://www.wikidata.org/entity/Q161243> ;
+  a <http://www.wikidata.org/entity/Q202216> ;
+  a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q17012> ;
+  <http://www.wikidata.org/prop/direct/P2585> "01" ;
+  schema:name "Guadeloupe"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/02> a <http://www.wikidata.org/entity/Q161243> ;
+  a <http://www.wikidata.org/entity/Q202216> ;
+  a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q17054> ;
+  <http://www.wikidata.org/prop/direct/P2585> "02" ;
+  schema:name "Martinique"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/03> a <http://www.wikidata.org/entity/Q202216> ;
+  a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3769> ;
+  <http://www.wikidata.org/prop/direct/P2585> "03" ;
+  schema:name "Guyane"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/04> a <http://www.wikidata.org/entity/Q161243> ;
+  a <http://www.wikidata.org/entity/Q202216> ;
+  a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q17070> ;
+  <http://www.wikidata.org/prop/direct/P2585> "04" ;
+  schema:name "La Réunion"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/06> a <http://www.wikidata.org/entity/Q202216> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q17063> ;
+  <http://www.wikidata.org/prop/direct/P2585> "06" ;
+  schema:name "Mayotte"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/11> a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q13917> ;
+  <http://www.wikidata.org/prop/direct/P2585> "11" ;
+  schema:name "Île-de-France"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/21> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q14103> ;
+  <http://www.wikidata.org/prop/direct/P2585> "21" ;
+  schema:name "Champagne-Ardenne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/22> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q13950> ;
+  <http://www.wikidata.org/prop/direct/P2585> "22" ;
+  schema:name "Picardie"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/23> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q16961> ;
+  <http://www.wikidata.org/prop/direct/P2585> "23" ;
+  schema:name "Haute-Normandie"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/24> a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q13947> ;
+  <http://www.wikidata.org/prop/direct/P2585> "24" ;
+  schema:name "Centre-Val de Loire"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/25> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q16954> ;
+  <http://www.wikidata.org/prop/direct/P2585> "25" ;
+  schema:name "Basse-Normandie"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/26> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q1173> ;
+  <http://www.wikidata.org/prop/direct/P2585> "26" ;
+  schema:name "Bourgogne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/27> a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q18578267> ;
+  <http://www.wikidata.org/prop/direct/P2585> "27" ;
+  schema:name "Bourgogne-Franche-Comté"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/28> a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q18677875> ;
+  <http://www.wikidata.org/prop/direct/P2585> "28" ;
+  schema:name "Normandie"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/31> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q16987> ;
+  <http://www.wikidata.org/prop/direct/P2585> "31" ;
+  schema:name "Nord-Pas-de-Calais"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/32> a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q18677767> ;
+  <http://www.wikidata.org/prop/direct/P2585> "32" ;
+  schema:name "Hauts-de-France"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/41> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q1137> ;
+  <http://www.wikidata.org/prop/direct/P2585> "41" ;
+  schema:name "Lorraine"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/42> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q1142> ;
+  <http://www.wikidata.org/prop/direct/P2585> "42" ;
+  schema:name "Alsace"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/43> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q16394> ;
+  <http://www.wikidata.org/prop/direct/P2585> "43" ;
+  schema:name "Franche-Comté"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/44> a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q18677983> ;
+  <http://www.wikidata.org/prop/direct/P2585> "44" ;
+  schema:name "Grand Est"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/52> a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q16994> ;
+  <http://www.wikidata.org/prop/direct/P2585> "52" ;
+  schema:name "Pays de la Loire"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/53> a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12130> ;
+  <http://www.wikidata.org/prop/direct/P2585> "53" ;
+  schema:name "Bretagne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/54> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q17009> ;
+  <http://www.wikidata.org/prop/direct/P2585> "54" ;
+  schema:name "Poitou-Charentes"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/72> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q1179> ;
+  <http://www.wikidata.org/prop/direct/P2585> "72" ;
+  schema:name "Aquitaine"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/73> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q16393> ;
+  <http://www.wikidata.org/prop/direct/P2585> "73" ;
+  schema:name "Midi-Pyrénées"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/74> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q1190> ;
+  <http://www.wikidata.org/prop/direct/P2585> "74" ;
+  schema:name "Limousin"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/75> a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q18678082> ;
+  <http://www.wikidata.org/prop/direct/P2585> "75" ;
+  schema:name "Nouvelle-Aquitaine"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/76> a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q18678265> ;
+  <http://www.wikidata.org/prop/direct/P2585> "76" ;
+  schema:name "Occitanie"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/82> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q463> ;
+  <http://www.wikidata.org/prop/direct/P2585> "82" ;
+  schema:name "Rhône-Alpes"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/83> a <http://www.wikidata.org/entity/Q1149061> ;
+  a <http://www.wikidata.org/entity/Q3502482> ;
+  a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q1152> ;
+  <http://www.wikidata.org/prop/direct/P2585> "83" ;
+  schema:name "Auvergne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/84> a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q18338206> ;
+  <http://www.wikidata.org/prop/direct/P2585> "84" ;
+  schema:name "Auvergne-Rhône-Alpes"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/91> a <http://www.wikidata.org/entity/Q22670030> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q17005> ;
+  <http://www.wikidata.org/prop/direct/P2585> "91" ;
+  schema:name "Languedoc-Roussillon"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/93> a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q15104> ;
+  <http://www.wikidata.org/prop/direct/P2585> "93" ;
+  schema:name "Provence-Alpes-Côte d'Azur"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/reg/94> a <http://www.wikidata.org/entity/Q22923920> ;
+  a <http://www.wikidata.org/entity/Q3502482> ;
+  a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q14112> ;
+  <http://www.wikidata.org/prop/direct/P2585> "94" ;
+  schema:name "Corse"@fr .
+
+
+# ===================================================
+# --- Departments
+
+# prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+# prefix schema: <http://schema.org/>
+# prefix wdt:    <http://www.wikidata.org/prop/direct/>
+# prefix wd:     <http://www.wikidata.org/entity/>
+# 
+# construct {
+#     ?dpt
+#         a ?type; 
+#         wdt:P2586 ?code;
+#         schema:name ?sLabel;
+#         owl:sameAs ?s.
+# }
+# where {
+#     service <https://query.wikidata.org/sparql> {
+#     select ?s ?sLabel ?code ?type {
+#     ?s wdt:P31 ?type;
+#        wdt:P2586 ?code.
+#        SERVICE wikibase:label { bd:serviceParam wikibase:language "fr". }
+#     }}
+# 
+#     bind (iri(concat("http://ns.inria.fr/covid19/datagouvfr/location/dep/", ?code)) as ?dpt)
+# }
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/01> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3083> ;
+  <http://www.wikidata.org/prop/direct/P2586> "01" ;
+  schema:name "Ain"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/02> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3093> ;
+  <http://www.wikidata.org/prop/direct/P2586> "02" ;
+  schema:name "Aisne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/03> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3113> ;
+  <http://www.wikidata.org/prop/direct/P2586> "03" ;
+  schema:name "Allier"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/04> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3131> ;
+  <http://www.wikidata.org/prop/direct/P2586> "04" ;
+  schema:name "Alpes-de-Haute-Provence"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/05> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3125> ;
+  <http://www.wikidata.org/prop/direct/P2586> "05" ;
+  schema:name "Hautes-Alpes"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/06> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3139> ;
+  <http://www.wikidata.org/prop/direct/P2586> "06" ;
+  schema:name "Alpes-Maritimes"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/07> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3148> ;
+  <http://www.wikidata.org/prop/direct/P2586> "07" ;
+  schema:name "Ardèche"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/08> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3164> ;
+  <http://www.wikidata.org/prop/direct/P2586> "08" ;
+  schema:name "Ardennes"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/09> a <http://www.wikidata.org/entity/Q192611> ;
+  a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3184> ;
+  <http://www.wikidata.org/prop/direct/P2586> "09" ;
+  schema:name "Ariège"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/10> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3194> ;
+  <http://www.wikidata.org/prop/direct/P2586> "10" ;
+  schema:name "Aube"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/11> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3207> ;
+  <http://www.wikidata.org/prop/direct/P2586> "11" ;
+  schema:name "Aude"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/12> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3216> ;
+  <http://www.wikidata.org/prop/direct/P2586> "12" ;
+  schema:name "Aveyron"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/13> a <http://www.wikidata.org/entity/Q192611> ;
+  a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3240> ;
+  <http://www.wikidata.org/prop/direct/P2586> "13" ;
+  schema:name "Bouches-du-Rhône"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/14> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3249> ;
+  <http://www.wikidata.org/prop/direct/P2586> "14" ;
+  schema:name "Calvados"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/15> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3259> ;
+  <http://www.wikidata.org/prop/direct/P2586> "15" ;
+  schema:name "Cantal"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/16> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3266> ;
+  <http://www.wikidata.org/prop/direct/P2586> "16" ;
+  schema:name "Charente"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/17> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3278> ;
+  <http://www.wikidata.org/prop/direct/P2586> "17" ;
+  schema:name "Charente-Maritime"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/18> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3286> ;
+  <http://www.wikidata.org/prop/direct/P2586> "18" ;
+  schema:name "Cher"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/19> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3326> ;
+  <http://www.wikidata.org/prop/direct/P2586> "19" ;
+  schema:name "Corrèze"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/21> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3342> ;
+  <http://www.wikidata.org/prop/direct/P2586> "21" ;
+  schema:name "Côte-d'Or"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/22> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3349> ;
+  <http://www.wikidata.org/prop/direct/P2586> "22" ;
+  schema:name "Côtes-d'Armor"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/23> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3353> ;
+  <http://www.wikidata.org/prop/direct/P2586> "23" ;
+  schema:name "Creuse"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/24> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3357> ;
+  <http://www.wikidata.org/prop/direct/P2586> "24" ;
+  schema:name "Dordogne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/25> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3361> ;
+  <http://www.wikidata.org/prop/direct/P2586> "25" ;
+  schema:name "Doubs"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/26> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3364> ;
+  <http://www.wikidata.org/prop/direct/P2586> "26" ;
+  schema:name "Drôme"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/27> a <http://www.wikidata.org/entity/Q192611> ;
+  a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3372> ;
+  <http://www.wikidata.org/prop/direct/P2586> "27" ;
+  schema:name "Eure"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/28> a <http://www.wikidata.org/entity/Q192611> ;
+  a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3377> ;
+  <http://www.wikidata.org/prop/direct/P2586> "28" ;
+  schema:name "Eure-et-Loir"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/29> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3389> ;
+  <http://www.wikidata.org/prop/direct/P2586> "29" ;
+  schema:name "Finistère"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/2A> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3336> ;
+  <http://www.wikidata.org/prop/direct/P2586> "2A" ;
+  schema:name "Corse-du-Sud"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/2B> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3334> ;
+  <http://www.wikidata.org/prop/direct/P2586> "2B" ;
+  schema:name "Haute-Corse"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/30> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12515> ;
+  <http://www.wikidata.org/prop/direct/P2586> "30" ;
+  schema:name "Gard"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/31> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12538> ;
+  <http://www.wikidata.org/prop/direct/P2586> "31" ;
+  schema:name "Haute-Garonne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/32> a <http://www.wikidata.org/entity/Q192611> ;
+  a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12517> ;
+  <http://www.wikidata.org/prop/direct/P2586> "32" ;
+  schema:name "Gers"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/33> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12526> ;
+  <http://www.wikidata.org/prop/direct/P2586> "33" ;
+  schema:name "Gironde"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/34> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12545> ;
+  <http://www.wikidata.org/prop/direct/P2586> "34" ;
+  schema:name "Hérault"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/35> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12549> ;
+  <http://www.wikidata.org/prop/direct/P2586> "35" ;
+  schema:name "Ille-et-Vilaine"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/36> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12553> ;
+  <http://www.wikidata.org/prop/direct/P2586> "36" ;
+  schema:name "Indre"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/37> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12556> ;
+  <http://www.wikidata.org/prop/direct/P2586> "37" ;
+  schema:name "Indre-et-Loire"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/38> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12559> ;
+  <http://www.wikidata.org/prop/direct/P2586> "38" ;
+  schema:name "Isère"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/39> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3120> ;
+  <http://www.wikidata.org/prop/direct/P2586> "39" ;
+  schema:name "Jura"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/40> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12563> ;
+  <http://www.wikidata.org/prop/direct/P2586> "40" ;
+  schema:name "Landes"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/41> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12564> ;
+  <http://www.wikidata.org/prop/direct/P2586> "41" ;
+  schema:name "Loir-et-Cher"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/42> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12569> ;
+  <http://www.wikidata.org/prop/direct/P2586> "42" ;
+  schema:name "Loire"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/43> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12572> ;
+  <http://www.wikidata.org/prop/direct/P2586> "43" ;
+  schema:name "Haute-Loire"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/44> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3068> ;
+  <http://www.wikidata.org/prop/direct/P2586> "44" ;
+  schema:name "Loire-Atlantique"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/45> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12574> ;
+  <http://www.wikidata.org/prop/direct/P2586> "45" ;
+  schema:name "Loiret"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/46> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12576> ;
+  <http://www.wikidata.org/prop/direct/P2586> "46" ;
+  schema:name "Lot"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/47> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12578> ;
+  <http://www.wikidata.org/prop/direct/P2586> "47" ;
+  schema:name "Lot-et-Garonne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/48> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12580> ;
+  <http://www.wikidata.org/prop/direct/P2586> "48" ;
+  schema:name "Lozère"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/49> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12584> ;
+  <http://www.wikidata.org/prop/direct/P2586> "49" ;
+  schema:name "Maine-et-Loire"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/50> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12589> ;
+  <http://www.wikidata.org/prop/direct/P2586> "50" ;
+  schema:name "Manche"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/51> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12594> ;
+  <http://www.wikidata.org/prop/direct/P2586> "51" ;
+  schema:name "Marne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/52> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12607> ;
+  <http://www.wikidata.org/prop/direct/P2586> "52" ;
+  schema:name "Haute-Marne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/53> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12620> ;
+  <http://www.wikidata.org/prop/direct/P2586> "53" ;
+  schema:name "Mayenne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/54> a <http://www.wikidata.org/entity/Q192611> ;
+  a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12626> ;
+  <http://www.wikidata.org/prop/direct/P2586> "54" ;
+  schema:name "Meurthe-et-Moselle"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/55> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12631> ;
+  <http://www.wikidata.org/prop/direct/P2586> "55" ;
+  schema:name "Meuse"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/56> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12642> ;
+  <http://www.wikidata.org/prop/direct/P2586> "56" ;
+  schema:name "Morbihan"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/57> a <http://www.wikidata.org/entity/Q192611> ;
+  a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12652> ;
+  <http://www.wikidata.org/prop/direct/P2586> "57" ;
+  schema:name "Moselle"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/58> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12657> ;
+  <http://www.wikidata.org/prop/direct/P2586> "58" ;
+  schema:name "Nièvre"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/59> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12661> ;
+  <http://www.wikidata.org/prop/direct/P2586> "59" ;
+  schema:name "Nord"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/60> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12675> ;
+  <http://www.wikidata.org/prop/direct/P2586> "60" ;
+  schema:name "Oise"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/61> a <http://www.wikidata.org/entity/Q192611> ;
+  a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12679> ;
+  <http://www.wikidata.org/prop/direct/P2586> "61" ;
+  schema:name "Orne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/62> a <http://www.wikidata.org/entity/Q192611> ;
+  a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12689> ;
+  <http://www.wikidata.org/prop/direct/P2586> "62" ;
+  schema:name "Pas-de-Calais"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/63> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12694> ;
+  <http://www.wikidata.org/prop/direct/P2586> "63" ;
+  schema:name "Puy-de-Dôme"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/64> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12703> ;
+  <http://www.wikidata.org/prop/direct/P2586> "64" ;
+  schema:name "Pyrénées-Atlantiques"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/65> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12700> ;
+  <http://www.wikidata.org/prop/direct/P2586> "65" ;
+  schema:name "Hautes-Pyrénées"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/66> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12709> ;
+  <http://www.wikidata.org/prop/direct/P2586> "66" ;
+  schema:name "Pyrénées-Orientales"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/67> a <http://www.wikidata.org/entity/Q56061> ;
+  a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12717> ;
+  <http://www.wikidata.org/prop/direct/P2586> "67" ;
+  schema:name "Bas-Rhin"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/68> a <http://www.wikidata.org/entity/Q56061> ;
+  a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12722> ;
+  <http://www.wikidata.org/prop/direct/P2586> "68" ;
+  schema:name "Haut-Rhin"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/69> a <http://www.wikidata.org/entity/Q57273747> ;
+  a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q18914778> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q46130> ;
+  <http://www.wikidata.org/prop/direct/P2586> "69" ;
+  schema:name "Rhône"@fr ;
+  schema:name "circonscription départementale du Rhône"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/70> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12730> ;
+  <http://www.wikidata.org/prop/direct/P2586> "70" ;
+  schema:name "Haute-Saône"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/71> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12736> ;
+  <http://www.wikidata.org/prop/direct/P2586> "71" ;
+  schema:name "Saône-et-Loire"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/72> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12740> ;
+  <http://www.wikidata.org/prop/direct/P2586> "72" ;
+  schema:name "Sarthe"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/73> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12745> ;
+  <http://www.wikidata.org/prop/direct/P2586> "73" ;
+  schema:name "Savoie"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/74> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12751> ;
+  <http://www.wikidata.org/prop/direct/P2586> "74" ;
+  schema:name "Haute-Savoie"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/75> a <http://www.wikidata.org/entity/Q22923920> ;
+  a <http://www.wikidata.org/entity/Q5119>, <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q90> ;
+  <http://www.wikidata.org/prop/direct/P2586> "75" ;
+  schema:name "Paris"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/76> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12758> ;
+  <http://www.wikidata.org/prop/direct/P2586> "76" ;
+  schema:name "Seine-Maritime"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/77> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12753> ;
+  <http://www.wikidata.org/prop/direct/P2586> "77" ;
+  schema:name "Seine-et-Marne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/78> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12820> ;
+  <http://www.wikidata.org/prop/direct/P2586> "78" ;
+  schema:name "Yvelines"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/79> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12765> ;
+  <http://www.wikidata.org/prop/direct/P2586> "79" ;
+  schema:name "Deux-Sèvres"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/80> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12770> ;
+  <http://www.wikidata.org/prop/direct/P2586> "80" ;
+  schema:name "Somme"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/81> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12772> ;
+  <http://www.wikidata.org/prop/direct/P2586> "81" ;
+  schema:name "Tarn"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/82> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12779> ;
+  <http://www.wikidata.org/prop/direct/P2586> "82" ;
+  schema:name "Tarn-et-Garonne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/83> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12789> ;
+  <http://www.wikidata.org/prop/direct/P2586> "83" ;
+  schema:name "Var"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/84> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12792> ;
+  <http://www.wikidata.org/prop/direct/P2586> "84" ;
+  schema:name "Vaucluse"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/85> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12798> ;
+  <http://www.wikidata.org/prop/direct/P2586> "85" ;
+  schema:name "Vendée"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/86> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12804> ;
+  <http://www.wikidata.org/prop/direct/P2586> "86" ;
+  schema:name "Vienne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/87> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12808> ;
+  <http://www.wikidata.org/prop/direct/P2586> "87" ;
+  schema:name "Haute-Vienne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/88> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3105> ;
+  <http://www.wikidata.org/prop/direct/P2586> "88" ;
+  schema:name "Vosges"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/89> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12816> ;
+  <http://www.wikidata.org/prop/direct/P2586> "89" ;
+  schema:name "Yonne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/90> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12782> ;
+  <http://www.wikidata.org/prop/direct/P2586> "90" ;
+  schema:name "Territoire de Belfort"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/91> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3368> ;
+  <http://www.wikidata.org/prop/direct/P2586> "91" ;
+  schema:name "Essonne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/92> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12543> ;
+  <http://www.wikidata.org/prop/direct/P2586> "92" ;
+  schema:name "Hauts-de-Seine"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/93> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12761> ;
+  <http://www.wikidata.org/prop/direct/P2586> "93" ;
+  schema:name "Seine-Saint-Denis"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/94> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12788> ;
+  <http://www.wikidata.org/prop/direct/P2586> "94" ;
+  schema:name "Val-de-Marne"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/95> a <http://www.wikidata.org/entity/Q6465> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q12784> ;
+  <http://www.wikidata.org/prop/direct/P2586> "95" ;
+  schema:name "Val-d'Oise"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/971> a <http://www.wikidata.org/entity/Q161243> ;
+  a <http://www.wikidata.org/entity/Q202216> ;
+  a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q17012> ;
+  <http://www.wikidata.org/prop/direct/P2586> "971" ;
+  schema:name "Guadeloupe"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/972> a <http://www.wikidata.org/entity/Q161243> ;
+  a <http://www.wikidata.org/entity/Q202216> ;
+  a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q17054> ;
+  <http://www.wikidata.org/prop/direct/P2586> "972" ;
+  schema:name "Martinique"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/973> a <http://www.wikidata.org/entity/Q202216> ;
+  a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q3769> ;
+  <http://www.wikidata.org/prop/direct/P2586> "973" ;
+  schema:name "Guyane"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/974> a <http://www.wikidata.org/entity/Q161243> ;
+  a <http://www.wikidata.org/entity/Q202216> ;
+  a <http://www.wikidata.org/entity/Q36784> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q17070> ;
+  <http://www.wikidata.org/prop/direct/P2586> "974" ;
+  schema:name "La Réunion"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/975> a <http://www.wikidata.org/entity/Q719487> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q34617> ;
+  <http://www.wikidata.org/prop/direct/P2586> "975" ;
+  schema:name "Saint-Pierre-et-Miquelon"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/976> a <http://www.wikidata.org/entity/Q202216> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q17063> ;
+  <http://www.wikidata.org/prop/direct/P2586> "976" ;
+  schema:name "Mayotte"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/977> a <http://www.wikidata.org/entity/Q719487> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q25362> ;
+  <http://www.wikidata.org/prop/direct/P2586> "977" ;
+  schema:name "Saint-Barthélemy"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/978> a <http://www.wikidata.org/entity/Q719487> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q126125> ;
+  <http://www.wikidata.org/prop/direct/P2586> "978" ;
+  schema:name "Saint-Martin"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/984> a <http://www.wikidata.org/entity/Q1048835> ;
+  a <http://www.wikidata.org/entity/Q161243> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q129003> ;
+  <http://www.wikidata.org/prop/direct/P2586> "984" ;
+  schema:name "Terres australes et antarctiques françaises"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/986> a <http://www.wikidata.org/entity/Q719487> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q35555> ;
+  <http://www.wikidata.org/prop/direct/P2586> "986" ;
+  schema:name "Wallis-et-Futuna"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/987> a <http://www.wikidata.org/entity/Q719487> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q30971> ;
+  <http://www.wikidata.org/prop/direct/P2586> "987" ;
+  schema:name "Polynésie française"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/988> a <http://www.wikidata.org/entity/Q161243> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q33788> ;
+  <http://www.wikidata.org/prop/direct/P2586> "988" ;
+  schema:name "Nouvelle-Calédonie"@fr .
+
+<http://ns.inria.fr/covid19/datagouvfr/location/dep/989> a <http://www.wikidata.org/entity/Q161243> ;
+  a <http://www.wikidata.org/entity/Q23442> ;
+  a <http://www.wikidata.org/entity/Q42523> ;
+  a <http://www.wikidata.org/entity/Q6617741> ;
+  owl:sameAs <http://www.wikidata.org/entity/Q161258> ;
+  <http://www.wikidata.org/prop/direct/P2586> "989" ;
+  schema:name "île Clipperton"@fr .

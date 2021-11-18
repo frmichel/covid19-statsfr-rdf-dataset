@@ -1,0 +1,41 @@
+# Author: Franck MICHEL, University Cote d'Azur, CNRS, Inria
+#
+# Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+
+@prefix xrr:    <http://i3s.unice.fr/xr2rml#>.
+@prefix rr:     <http://www.w3.org/ns/r2rml#>.
+@prefix rml:    <http://semweb.mmlab.be/ns/rml#>.
+
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#>.
+
+@prefix schema: <http://schema.org/>.
+@prefix wd:     <http://www.wikidata.org/entity/>.
+@prefix wdt:    <http://www.wikidata.org/prop/direct/>.
+
+
+<#LS>
+    a               xrr:LogicalSource;
+    xrr:query       """db.deaths_unwind.find({})""".
+
+<#TM>
+    a               rr:TriplesMap;
+    xrr:logicalSource <#LS>;
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/covid19/datagouvfr/announcement/{$.observations.values.date}/{$.observations.level}/{$.observations.code_level}";
+        rr:class    schema:SpecialAnnouncement;
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate schema:category;
+        rr:object <http://www.wikidata.org/entity/Q81068910>; # Covid19 pandemic
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:datePosted;
+        rr:objectMap [ xrr:reference "$.observations.values.date"; rr:datatype xsd:date ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:spatialCoverage;
+        rr:objectMap [ rr:template "http://ns.inria.fr/covid19/datagouvfr/location/{$.observations.level}/{$.observations.code_level}" ];
+    ].
