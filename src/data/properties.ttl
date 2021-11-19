@@ -1,0 +1,19 @@
+@prefix covidpr:<http://ns.inria.fr/covid19/property/>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+
+covidpr:noCasesIntensiveCare
+    a               owl:DatatypeProperty;
+    rdfs:label      "number of patients in intensive care units".
+
+covidpr:propagationVariantA
+    a               owl:DatatypeProperty;
+    rdfs:label      "propagation of mutation E484K (including variants Beta, Gamma)".
+
+covidpr:propagationVariantB
+    a               owl:DatatypeProperty;
+    rdfs:label      "propagation of mutation E484Q (including variant Kappa)".
+
+covidpr:propagationVariantC
+    a               owl:DatatypeProperty;
+    rdfs:label      "propagation of mutation L452R (including variant Delta)".

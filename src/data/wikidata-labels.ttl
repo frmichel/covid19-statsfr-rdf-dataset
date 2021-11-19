@@ -5,31 +5,13 @@
 @prefix wdt:    <http://www.wikidata.org/prop/direct/>.
 @prefix wd:     <http://www.wikidata.org/entity/>.
 
-wd:Q81068910 rdfs:label "Covid19 pandemic".
-
+wd:Q81068910 rdfs:label "COVID-19 pandemic".
 wdt:P1603   rdfs:label "number of confirmed cases".
 wdt:P1120   rdfs:label "number of deaths in hospital".
 wdt:P8049   rdfs:label "number of hospitalized cases".
-covidpr:noCasesIntensiveCare
-    a               owl:DatatypeProperty;
-    rdfs:label      "number of patients in intensive care units".
-
-covidpr:propagationVariantA
-    a               owl:DatatypeProperty;
-    rdfs:label      "propagation of mutation E484K (including variants Beta, Gamma)".
-
-covidpr:propagationVariantB
-    a               owl:DatatypeProperty;
-    rdfs:label      "propagation of mutation E484Q (including variant Kappa)".
-
-covidpr:propagationVariantC
-    a               owl:DatatypeProperty;
-    rdfs:label      "propagation of mutation L452R (including variant Delta)".
-
 
 wdt:P2585   rdfs:label "INSEE region code".
 wdt:P2586   rdfs:label "INSEE department code".
-
 wd:Q36784   rdfs:label "region of France".
 wd:Q6465    rdfs:label "department of France".
 wd:Q56061   rdfs:label "administrative territorial entity".
