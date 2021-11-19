@@ -1,0 +1,109 @@
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix bibo:   <http://purl.org/ontology/bibo/> .
+@prefix dcat:   <http://www.w3.org/ns/dcat#>.
+@prefix dce:    <http://purl.org/dc/elements/1.1/>.
+@prefix dct:    <http://purl.org/dc/terms/>.
+@prefix foaf:   <http://xmlns.com/foaf/0.1/>.
+@prefix prov:   <http://www.w3.org/ns/prov#>.
+@prefix schema: <http://schema.org/>.
+@prefix sd:   	<http://www.w3.org/ns/sparql-service-description#>
+@prefix void:   <http://rdfs.org/ns/void#>.
+@prefix covid:  <http://ns.inria.fr/covid19/datagouvfr/> .
+
+covid:dataset
+    a               dcat:Dataset, void:Dataset, schema:Dataset;
+    dct:title       "RDF dataset of COVID-19 pandemic statistics in France";
+    schema:name     "RDF dataset of COVID-19 pandemic statistics in France";
+    dct:description "RDF representation of statistics about the COVID-19 pandemic in France, comprising the daily numbers of confirmed cases, hospitalized cases, cases in intensive care, and propagation of virus mutations.";
+
+    dct:licence     <https://creativecommons.org/licenses/by-nc/4.0/>;
+    schema:licence  <https://creativecommons.org/licenses/by-nc/4.0/>;
+    dct:issued      "{{date}}"^^xsd:date; schema:datePublished "{{date}}"^^xsd:date;
+    
+    dct:subject     "covid19", "statistics", "france";
+    schema:keywords "covid19", "statistics", "france";
+    dcat:keyword    "covid19", "statistics", "france";
+    
+    dct:creator      <https://orcid.org/0000-0001-9064-0463>, <https://team.inria.fr/wimmics/>;
+    schema:author    <https://orcid.org/0000-0001-9064-0463>, <https://team.inria.fr/wimmics/>;
+    dct:publisher    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>;
+    schema:publisher <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>;
+
+    a prov:Entity;
+    prov:wasGeneratedBy     covid:RdfGeneration;
+    prov:wasGeneratedAtTime "{{date}}"^^xsd:date;
+    prov:wasDerivedFrom <https://data.widgets.dashboard.covid19.data.gouv.fr>;
+    
+    a                   void:Dataset;
+    void:uriSpace       "http://ns.inria.fr/covid19/datagouvfr/";
+    #void:triples        "{{triple}}"^^xsd:integer;
+    void:sparqlEndpoint <https://covidonteweb.inria.fr/sparql>;
+
+    void:vocabulary
+        bibo:, dcat:, dce:, dct:, foaf:, prov:, schema:, void:, <http://www.wikidata.org/entity/>.
+
+<https://ror.org/0496p8026> a foaf:Organization; foaf:name "University Côte d'Azur";
+    foaf:homepage <https://univ-cotedazur.fr>.
+<https://ror.org/02kvxyf05> a foaf:Organization; foaf:name "Inria";
+    foaf:homepage <https://www.inria.fr>.
+<https://ror.org/02feahw73> a foaf:Organization; foaf:name "CNRS";
+    foaf:homepage <https://www.cnrs.fr>.
+<https://team.inria.fr/wimmics/> a foaf:Organization; foaf:name "Wimmics research team".
+
+<https://orcid.org/0000-0001-9064-0463> a foaf:Person; foaf:name "Franck MICHEL".
+
+<https://data.widgets.dashboard.covid19.data.gouv.fr>
+    a prov:Entity, dcat:Dataset, schema:Dataset;
+    dct:title       "Raw data files from the COVID-19 France dashboard";
+    schema:name     "Raw data files from the COVID-19 France dashboard";
+    foaf:homepage   <https://data.widgets.dashboard.covid19.data.gouv.fr>;
+    dct:licence     <https://github.com/etalab/licence-ouverte/blob/master/LO.md#licence-ouverte-20open-licence-20>;
+    schema:licence  <https://github.com/etalab/licence-ouverte/blob/master/LO.md#licence-ouverte-20open-licence-20>;
+    dct:issued      "{{date}}"^^xsd:date; schema:datePublished "{{date}}"^^xsd:date;
+
+
+# --- SPARQL Service Description and DCAT DataService
+covid:sparql-service
+    a                    sd:Service, dcat:DataService;
+    sd:supportedLanguage sd:SPARQL10Query, sd:SPARQL11Query;
+    sd:endpoint          <https://covidonteweb.inria.fr/sparql>;
+    dcat:endpointURL     <https://covidonteweb.inria.fr/sparql>;
+    dcat:servesDataset   covid:dataset;
+    sd:availableGraphs [
+        a                sd:GraphCollection;
+        sd:namedGraph    covid:graph
+    ].
+
+
+# --- Provenance information
+
+covid:RdfGeneration
+    a               prov:Activity;
+    dct:title       "RDF generation process"; rdfs:label "RDF generation process";
+    dct:description "Transformation of the source dataset to RDF using the Morph-xR2RML mapping pocessing engine";
+    prov:wasAssociatedWith covid:xR2RML.
+
+covid:xR2RML
+    a               prov:SoftwareAgent;
+    foaf:homepage   <https://github.com/frmichel/morph-xr2rml/>;
+    dct:title       "Morph-xR2RML"; rdfs:label "Morph-xR2RML";
+    dct:description "Implementation of the xR2RML mapping language for MongoDB";
+    dct:creator     <https://orcid.org/0000-0001-9064-0463>; schema:author <https://orcid.org/0000-0001-9064-0463>;
+    dct:licence     <http://www.apache.org/licenses/LICENSE-2.0>;
+    owl:versionInfo "1.3.1";
+    schema:subjectOf covid:hal01207828.
+
+covid:hal01207828 
+    a               <https://data.archives-ouvertes.fr/doctype/Article>, bibo:AcademicArticle, schema:ScholarlyArticle;
+    dct:title       "Translation of Relational and Non-Relational Databases into RDF with xR2RML";
+    schema:name     "Translation of Relational and Non-Relational Databases into RDF with xR2RML";
+    dct:issued      "2015"^^xsd:gYear; schema:datePublished "2015"^^xsd:gYear;
+    dct:bibliographicCitation "Franck Michel, Loïc Djimenou, Catherine Faron Zucker, Johan Montagnat. Translation of Relational and Non-Relational Databases into RDF with xR2RML. Proceedings of the WebIST'15 Conference, 2015, Lisbon, Portugal. pp.443-454";
+    bibo:doi        "10.5220/0005448304430454";
+    dct:creator     <https://orcid.org/0000-0001-9064-0463>, "Loïc Djimenou", <https://orcid.org/0000-0001-5959-5561>, "Johan Montagnat";
+    schema:author   <https://orcid.org/0000-0001-9064-0463>, "Loïc Djimenou", <https://orcid.org/0000-0001-5959-5561>, "Johan Montagnat";
+    schema:sameAs   <https://hal.archives-ouvertes.fr/hal-01207828>;
+    schema:about    covid:xR2RML.

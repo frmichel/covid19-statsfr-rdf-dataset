@@ -32,14 +32,19 @@ if [  $(wc -c <"$DATASET_DIR/confirmed.ttl") -lt  "20000000" ]; then
     exit 0
 fi
 
+# Create dataset description
+today=$(date '+%F')
+awk "{ gsub(/{{date}}/, \"$today\"); print }" \
+    $PROJECT/src/data/dataset-description_tpl.ttl > $PROJECT/src/data/dataset-description.ttl
+
 # Replace existing graph with new one
 log "Importing graph in Virtuoso..."; echo
-graph="http://ns.inria.fr/covid19/graph/datagouvfr"
+graph="http://ns.inria.fr/covid19/datagouvfr/graph"
 . $PROJECT/src/virtuoso/virtuoso-import.sh \
     --cleargraph \
     --graph $graph \
-    --path $PROJECT/src \
-    init.ttl geographic_locations.ttl
+    --path $PROJECT/src/data \
+    wikidata-labels.ttl properties.ttl geographic_locations.ttl dataset-description.ttl
 
 . $PROJECT/src/virtuoso/virtuoso-import.sh \
     --graph $graph \
