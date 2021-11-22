@@ -32,6 +32,7 @@ if [  $(wc -c <"$DATASET_DIR/confirmed.ttl") -lt  "20000000" ]; then
     exit 0
 fi
 
+
 # Create dataset description
 today=$(date '+%F')
 awk "{ gsub(/{{date}}/, \"$today\"); print }" \
@@ -50,5 +51,11 @@ graph="http://ns.inria.fr/covid19/datagouvfr/graph"
     --graph $graph \
     --path $DATASET_DIR \
     '*.ttl' 
+
+
+log "Zipping ttl files..."
+cd $PROJECT/src
+zip rdf-data-${today}.zip $DATASET_DIR/*.ttl
+
 
 echo; log "Done."
