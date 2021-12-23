@@ -54,8 +54,9 @@ graph="http://ns.inria.fr/covid19/datagouvfr/graph"
 
 
 log "Zipping ttl files..."
+mkdir -p dumps
 cd $PROJECT/src
-zip rdf-data-${today}.zip $DATASET_DIR/*.ttl
+zip dumps/rdf-data-${today}.zip $DATASET_DIR/*.ttl
 
 
 echo; log "Done."
