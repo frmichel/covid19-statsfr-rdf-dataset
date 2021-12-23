@@ -3,7 +3,7 @@
 The [COVID-19 France dashboard](https://dashboard.covid19.data.gouv.fr/vue-d-ensemble?location=FRA) provides consolidated data and visualization tools of statistics about the COVID-19 pandemic in France.
 Additionally, all raw data files are available [for download](https://data.widgets.dashboard.covid19.data.gouv.fr/).
 
-The [Wimmics team](https://team.inria.fr/wimmics/) and [I3S laboratory](http://www.i3s.unice.fr/) (University Côte d'Azur, Inria, CNRS) provide an [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) representation of these data, comprising the daily numbers of confirmed cases, hospitalized cases, cases in intensive care, and propagation of virus mutations.
+The [Wimmics team](https://team.inria.fr/wimmics/) and [I3S laboratory](http://www.i3s.unice.fr/) ([University Côte d'Azur](https://univ-cotedazur.eu/), [CNRS](https://www.cnrs.fr), [Inria](https://www.inria.fr)) provide an [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) representation of these data, comprising the daily numbers of confirmed cases, hospitalized cases, cases in intensive care, and propagation of virus mutations.
 Granularity includes national, regional and departmental levels.
 
 ### SPARQL Querying
