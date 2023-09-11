@@ -34,13 +34,13 @@ covid:dataset
 
     a prov:Entity;
     prov:wasGeneratedBy     covid:RdfGeneration;
-    prov:wasGeneratedAtTime "{{date}}"^^xsd:date;
+    prov:generatedAtTime "{{date}}"^^xsd:date;
     prov:wasDerivedFrom <https://data.widgets.dashboard.covid19.data.gouv.fr>;
     
     a                   void:Dataset;
     void:uriSpace       "http://ns.inria.fr/covid19/datagouvfr/";
     #void:triples        "{{triple}}"^^xsd:integer;
-    void:sparqlEndpoint <https://covidonteweb.inria.fr/sparql>;
+    void:sparqlEndpoint <https://covidontheweb.inria.fr/sparql>;
 
     void:vocabulary
         bibo:, dcat:, dce:, dct:, foaf:, prov:, schema:, void:, <http://www.wikidata.org/entity/>.

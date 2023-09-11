@@ -8,7 +8,7 @@ Granularity includes national, regional and departmental levels.
 
 ### SPARQL Querying
 
-The RDF dataset is published on our Virtuoso OS SPARQL endpoint: https://covidontheweb.inria.fr/sparql, as named graph `http://ns.inria.fr/covid19/graph/datagouvfr`. It is updated weekly.
+The RDF dataset is published on our Virtuoso OS SPARQL endpoint: https://covidontheweb.inria.fr/sparql, as named graph `http://ns.inria.fr/covid19/graph/datagouvfr`. It is updated daily.
 
 As an example, you can look up the announcement http://ns.inria.fr/covid19/datagouvfr/announcement/2021-09-01/dep/75 concerning Paris (department 75) on Sept. 1st 2021, or [submit the SPARQL query below](https://covidontheweb.inria.fr/sparql?default-graph-uri=&query=select%20*%20from%20%3Chttp%3A%2F%2Fns.inria.fr%2Fcovid19%2Fdatagouvfr%2Fgraph%3E%0Awhere%20%7B%0A%20%20%20%20%3Fa%20%20a%20schema%3ASpecialAnnouncement%3B%0A%20%20%20%20%20%20%20%20schema%3AdatePosted%20%3Fdate%3B%0A%20%20%20%20%20%20%20%20schema%3AspatialCoverage%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20a%20%20%20%20%20%20%20%20%20%20%20%20%20wd%3AQ6465%3B%20%23%20department%0A%20%20%20%20%20%20%20%20%20%20%20%20wdt%3AP2586%20%20%20%20%20%2275%22%3B%0A%20%20%20%20%20%20%20%20%5D%3B%0A%20%20%20%20%20%20%20%20schema%3AdiseaseSpreadStatistics%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20rdfs%3Alabel%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3FstatLabel%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20schema%3AmeasuredValue%20%20%20%20%3FstatVal%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20schema%3AmeasuredProperty%20%3FstatProp%0A%20%20%20%20%20%20%20%20%5D.%0A%7D%20order%20by%20desc(%3Fdate)&should-sponge=&format=text%2Fhtml&timeout=0&debug=on&run=+Run+Query+) that retrieves all announcements for Paris:
 
